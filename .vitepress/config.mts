@@ -27,7 +27,7 @@ const vitePressOptions = {
   // 站点的描述（写入HTML中）
   description: '基于 VitePress 的个人知识库',
   // HTML的<head>标签
-  head: [['link', { rel: 'icon', href: '/vitepress-logo-mini.svg' }]],
+  head: [['link', { rel: 'icon', href: './vitepress-logo-mini.svg' }]],
 
   ignoreDeadLinks: true,
 
