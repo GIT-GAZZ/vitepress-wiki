@@ -20,6 +20,7 @@ const vitePressSidebarOptions = {
 
 // VitePress的配置选项：https://vitepress.dev/zh/reference/site-config
 const vitePressOptions = {
+  base: '/vitepress-wiki/',
   // 站点的标题（显示在浏览器标签中）
   title: '个人知识库',
   // titleTemplate: ':title | 个人知识库',
