@@ -6,4 +6,4 @@ next: false
 ---
 # Welcome To Wiki
 
-请左侧边栏选择文档进行阅读。
+请左侧边栏选择文档进行阅读
