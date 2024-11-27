@@ -65,7 +65,7 @@ const vitePressOptions = {
     nav: [
       {
         text: '全部文档',
-        link: '/welcome',
+        link: '/Welcome',
         // 高亮
         activeMatch: '/.+',
       },
