@@ -15,7 +15,7 @@ hero:
       link: /Welcome
     - theme: alt
       text: GitHub
-      link: /api-examples
+      link: https://github.com/GIT-GAZZ/vitepress-wiki
 
 features:
   - icon: 📝

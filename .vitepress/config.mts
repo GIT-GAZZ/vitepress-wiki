@@ -71,7 +71,7 @@ const vitePressOptions = {
     ],
     // 导航栏右侧的社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/GIT-GAZZ/vitepress-wiki' }
     ],
     // 左侧边栏
     sidebar: [
@@ -83,7 +83,7 @@ const vitePressOptions = {
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      pattern: 'https://github.com/GIT-GAZZ/vitepress-wiki/edit/main/:path',
       text: '在 GitHub 上编辑此页面'
     },
     // 最后更新时间
