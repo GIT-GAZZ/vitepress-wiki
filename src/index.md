@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 全部文档
-      link: /Welcome
+      link: /welcome
     - theme: alt
       text: GitHub
       link: https://github.com/GIT-GAZZ/vitepress-wiki
