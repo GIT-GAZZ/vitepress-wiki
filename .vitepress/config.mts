@@ -84,7 +84,7 @@ const vitePressOptions = {
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/GIT-GAZZ/vitepress-wiki/edit/main/:path',
+      pattern: 'https://github.com/GIT-GAZZ/vitepress-wiki/edit/main/src/:path',
       text: '在 GitHub 上编辑此页面'
     },
     // 最后更新时间
