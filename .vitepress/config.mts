@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress'
-import { generateSidebar } from 'vitepress-sidebar';
+import { withSidebar, generateSidebar } from 'vitepress-sidebar';
 import markdownItTaskLists from 'markdown-it-task-lists'
 
 // VitePress Sidebar（动态侧边栏）的配置选项：https://vitepress-sidebar.cdget.com/zhHans/guide/options
 const vitePressSidebarOptions = {
   // 文档根路径
-  documentRootPath: './src',
+  documentRootPath: '/src',
   // 折叠
   collapsed: true,
   // 折叠默认深度
@@ -15,23 +15,67 @@ const vitePressSidebarOptions = {
   // 排序：文件名称中的数字会按照预期进行排序
   sortMenusOrderNumericallyFromTitle: true,
   // 调试打印
-  debugPrint: false,
+  debugPrint: true,
 };
 
+const multiSidebarKeys = ['编程语言/Java', '编程语言/Python']
+// const tree = [{
+//   text: '全部文档',
+//   path: 'all-doc',
+// }, {
+//   text: '编程语言',
+//   path: 'prog-language',
+//   items: [{
+//     text: 'Java',
+//     path: 'Java',
+//   }, {
+//     text: 'Python',
+//     path: 'Python',
+//   }]
+// }]
+//
+// function generateNav(tree, parentPath = '') {
+//   return tree.map(node => {
+//     const link = parentPath ? `${parentPath}/${node.path}` : node.path
+//     const newNode = {
+//       ...node,
+//       link: link,
+//     };
+//
+//     if (newNode.items && newNode.items.length > 0) {
+//       newNode.items = generateNav(newNode.items, newNode.link);
+//     }
+//     return newNode;
+//   });
+// }
+//
+// const nav = generateNav(tree)
+
 // VitePress的配置选项：https://vitepress.dev/zh/reference/site-config
+const base = '/vitepress-wiki';
 const vitePressOptions = {
-  base: '/vitepress-wiki/',
+  base: base,
   // 站点的标题（显示在浏览器标签中）
   title: '个人知识库',
   // titleTemplate: ':title | 个人知识库',
   // 站点的描述（写入HTML中）
   description: '基于 VitePress 的个人知识库',
   // HTML的<head>标签
-  head: [['link', { rel: 'icon', href: './vitepress-logo-mini.svg' }]],
+  head: [['link', { rel: 'icon', href: `${base}/vitepress-logo-mini.svg` }]],
 
   ignoreDeadLinks: true,
 
   srcDir: './src',
+  // rewrites: {
+  //   'index.md': 'index.md',
+  //   ':path(.*)': 'all-doc/:path',
+  // },
+  // rewrites: function (path) {
+  //   if (path === 'index.md') {
+  //     return path;
+  //   }
+  //   return [`all-doc/${path}`, path]
+  // },
 
   // 默认主题的配置选项：https://vitepress.dev/zh/reference/default-theme-config
   themeConfig: {
@@ -62,25 +106,55 @@ const vitePressOptions = {
     },
 
     // 顶部导航栏
-    nav: [
-      {
-        text: '全部文档',
-        link: '/Welcome',
+    nav: [{
+      text: '全部文档',
+      link: '/Welcome',
+      // 高亮
+      // activeMatch: `/`,
+      activeMatch: `^(?!/(${multiSidebarKeys.join('|')})).*$`,
+    }, {
+      text: '编程语言',
+      items: [{
+        text: 'Java',
+        link: '/编程语言/Java/Java开发规范.md',
         // 高亮
-        activeMatch: '/.+',
-      },
-    ],
+        activeMatch: '/编程语言/Java',
+      }, {
+        text: 'Python',
+        link: '/编程语言/Python/概述.html',
+        // 高亮
+        activeMatch: '/编程语言/Python',
+      }],
+      // 高亮
+      activeMatch: '/编程语言',
+    }],
+
     // 导航栏右侧的社交链接
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/GIT-GAZZ/vitepress-wiki' }
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/GIT-GAZZ/vitepress-wiki' }],
+
     // 左侧边栏
-    sidebar: [
-      {
+    sidebar: {
+      '/': [{
         text: '全部文档',
         items: generateSidebar(vitePressSidebarOptions)
-      },
-    ],
+      }],
+      // '/all-doc/': {
+      //   base: '/all-doc/',
+      //   items: [{
+      //     text: '全部文档',
+      //     items: generateSidebar(vitePressSidebarOptions)
+      //   }]
+      // },
+      ...generateSidebar(multiSidebarKeys.map(multiSidebarKey => {
+          return {
+            ...vitePressSidebarOptions,
+            scanStartPath: multiSidebarKey,
+            basePath: `/${multiSidebarKey}/`,
+            resolvePath: `/${multiSidebarKey}/`,
+          }
+        }
+      ))
+    },
 
     // 编辑链接
     editLink: {
@@ -120,5 +194,17 @@ const vitePressOptions = {
 }
 
 export default defineConfig(vitePressOptions);
-// export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));
-
+// export default defineConfig(withSidebar(vitePressOptions, [
+//   {
+//     ...vitePressSidebarOptions,
+//     scanStartPath: '编程语言',
+//     basePath: '/编程语言/',
+//     resolvePath: '/编程语言/',
+//   },
+//   {
+//     ...vitePressSidebarOptions,
+//     scanStartPath: '编程语言',
+//     basePath: '/编程语言/',
+//     resolvePath: '/编程语言/',
+//   }
+// ]));

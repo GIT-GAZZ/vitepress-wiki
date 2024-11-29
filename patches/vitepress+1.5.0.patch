@@ -1,0 +1,26 @@
+diff --git a/node_modules/vitepress/dist/node/chunk-DMuPggCS.js b/node_modules/vitepress/dist/node/chunk-DMuPggCS.js
+index 7a1ff69..24dd069 100644
+--- a/node_modules/vitepress/dist/node/chunk-DMuPggCS.js
++++ b/node_modules/vitepress/dist/node/chunk-DMuPggCS.js
+@@ -17094,10 +17094,17 @@ function resolveRewrites(pages, userRewrites) {
+   const rewriteToPage = {};
+   if (typeof userRewrites === "function") {
+     for (const page of pages) {
+-      const dest = userRewrites(page);
+-      if (dest && dest !== page) {
+-        pageToRewrite[page] = dest;
+-        rewriteToPage[dest] = page;
++      let dest = userRewrites(page);
++      if (dest) {
++        if (!Array.isArray(dest)) {
++          dest = [dest]
++        }
++        dest.forEach(item => {
++          if (!pageToRewrite[page]) {
++            pageToRewrite[page] = item;
++          }
++          rewriteToPage[item] = page;
++        })
+       }
+     }
+   } else if (typeof userRewrites === "object") {
