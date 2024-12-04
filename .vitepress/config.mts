@@ -18,6 +18,7 @@ const vitePressSidebarOptions = {
   debugPrint: true,
 };
 
+// 在Windows创建软连接：mklink /D "D:\dev\projects-node\vitepress-wiki\src\编程语言\Java" "..\Java"
 const multiSidebarKeys = ['编程语言/Java', '编程语言/Python']
 // const tree = [{
 //   text: '全部文档',
