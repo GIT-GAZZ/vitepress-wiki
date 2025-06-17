@@ -62,8 +62,10 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup_`d
 
 # 下载阿里云镜像仓库的配置文件
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 # 下载网易163镜像仓库的配置文件
 wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
 
 # yum clean all用于清理所有缓存，包括已下载的软件包、头文件和元数据
 # yum makecache用于生成镜像仓库的元数据缓存，执行此命令会下载镜像仓库中的软件包列表和相关信息，以加速后续的yum操作，如搜索软件包和执行安装操作，这样可以提高软件包管理的效
@@ -81,7 +83,7 @@ yum repolist disabled
 ```shell
 # 安装指定软件
 # -y：自动确认所有提示，无需手动输入
-yum install -y <package_name>
+yum install <package_name> -y
 
 # 检查更新
 yum check-update

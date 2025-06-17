@@ -2,6 +2,8 @@
 + CentOS：SSH 服务的名称是 sshd
 
 ```shell
+# 更新元数据
+$ yum clean all && yum makecache
 # 安装SSH服务，不会自动启动
 $ yum install openssh-server -y
 
@@ -48,7 +50,8 @@ $ cat /etc/ssh/sshd_config | grep ClientAliveCountMax
 
 # 修改SSH配置
 $ vim /etc/ssh/sshd_config
-# 重启SSH服务
+# 重启SSH服务（CentOS/Ubuntu）
+$ systemctl restart sshd
 $ systemctl restart ssh
 ```
 

@@ -2,7 +2,11 @@
 
 ```shell
 npm -v
-npm install <模块名> [-g] [--registry <URL>] [--save/-s/[--save-dev/-d]] // -s默认
+npm install <模块名>
+	[--registry <URL>]
+	[-g]
+	[--save/-S/]
+	[--save-dev/-D]
 npm uninstall/uni <模块名> [-g] 安装模块 install可以简写i -g表示全局安装 --registry使用指定镜像安装模块
 
 npm install npm -g 升级npm

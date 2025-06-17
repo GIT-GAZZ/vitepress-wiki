@@ -114,7 +114,7 @@ $ cat /etc/selinux/config | grep SELINUX
 由于 CentOS8 防火墙使用了 `nftables`，但 Docker 尚未支持 `nftables`， 我们可以使用如下设置：
 
 ```shell
-vi /etc/firewalld/firewalld.conf
+vim /etc/firewalld/firewalld.conf
 
 # FirewallBackend=nftables
 FirewallBackend=iptables
