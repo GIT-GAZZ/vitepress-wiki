@@ -43,11 +43,11 @@
 
 - 雷霆
 
-  - 官网：https://www.leiting.uk
+  - 官网：https://lt3.uniss.me
   - 地址发布页：https://yuansu.gitbook.io/leiting
   - 订阅链接：
-    - 雷霆-130：https://nn8qozmu.nn8qozmu.top/api/v1/client/subscribe?token=50eecd47819cd53f461da4ce6d100e23
-    - 雷霆-136：https://nn8qozmu.nn8qozmu.top/api/v1/client/subscribe?token=20c44b273a38dba0038de869cc6dc2e4
+    - 雷霆-130：https://w.nn8qozmu.top/api/v1/client/new?token=50eecd47819cd53f461da4ce6d100e23
+    - 雷霆-136：~~https://nn8qozmu.nn8qozmu.top/api/v1/client/subscribe?token=20c44b273a38dba0038de869cc6dc2e4~~
 - 魔戒
   - 官网：https://mojie.me
   - 订阅链接：https://onlysub.mjurl.com/api/v1/client/subscribe?token=80bef547e433a6a522a9e91f09a0ccdd
@@ -56,11 +56,11 @@
   - 按年：
     - 12元 1年
     - 20元 两年
-  - 订阅链接：https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=605dd753f46528c13d075674b115e943
+  - 订阅链接：https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=2f2afd03886d4719b871f379ad89461f
 - 肥猫云
   - 官网：https://fcweba02.cc/dashboard
   - 按月：20元 200G
-  - 订阅：https://fcsblka.fcsubcn.cc:2096/api/v1/client/subscribe?token=fcccbef29d0ee7f5cf9540d380898eae
+  - 订阅：~~https://fcsblka.fcsubcn.cc:2096/api/v1/client/subscribe?token=fcccbef29d0ee7f5cf9540d380898eae~~
 - 倾城极速
   - 官网：https://ktrpkbhz.wcnmdmht.biz/#/stage/dashboard
   - 按月：6.99元 50G

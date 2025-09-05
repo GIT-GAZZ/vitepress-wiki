@@ -52,6 +52,7 @@ log_error=/var/log/mysql/error.log
 
 # sql-mode
 sql-mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,TIME_TRUNCATE_FRACTIONAL"
+# TIME_TRUNCATE_FRACTIONAL：当保存时间数据是，如果超出字段的精度，则截断超出的部分
 
 # 不配置这个，函数可能无法创建
 log-bin-trust-function-creators=1
